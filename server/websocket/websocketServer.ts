@@ -3,7 +3,7 @@ import { RPAEngine } from '../../src/core/engine/RPAEngine';
 import { ETLPipeline } from '../../src/core/pipeline/ETLPipeline';
 import type { WebSocketMessage } from '../../src/types/api.types';
 
-const PORT = parseInt(process.env.WEBSOCKET_PORT || '3001');
+const PORT = parseInt(process.env.WEBSOCKET_PORT || '3002');
 
 /**
  * RPA WebSocket Server
