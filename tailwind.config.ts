@@ -24,7 +24,6 @@ const config: Config = {
         warning: '#f59e0b',
         danger: '#ef4444',
         dark: '#1f2937',
-        gray: '#6b7280',
         light: '#f3f4f6',
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
