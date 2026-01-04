@@ -11,7 +11,28 @@ Complete budget breakdown for deploying the Banking Network Utility RPA Automati
 | **Starter** | $195/month | Small banks, 1-3 networks, <10K TX/day | 2 weeks |
 | **Professional** | $695/month | Mid-market banks, 5-10 networks, <100K TX/day | 4 weeks |
 | **Enterprise** | $1,860/month | Large institutions, 20+ networks, 1M+ TX/day | 8 weeks |
-| **Enterprise Plus** | $3,490/month | Clearinghouses, multi-tenant SaaS, unlimited scale | 12 weeks |
+| **Enterprise Plus** | $3,490/month | Multi-tenant SaaS providers, unlimited scale | 12 weeks |
+
+---
+
+## ⚠️ IMPORTANT: Banking Network Support
+
+**Clearinghouse networks (ACH/NACHA, SWIFT, FedWire, CHIPS) are RESERVED for the Banking Network Project and are NOT included in any pricing tier.**
+
+**Primary Services Available:**
+- ✅ Payment Processors (Visa, Mastercard, PayPal, Stripe, Square)
+- ✅ Shared Banking Infrastructure (FIS, Fiserv, Jack Henry, Temenos)
+- ✅ Direct Bank Web Automation (Custom bank portals)
+
+**NOT Included:**
+- ❌ ACH/NACHA Clearinghouse (reserved)
+- ❌ SWIFT Network (reserved)
+- ❌ FedWire (reserved)
+- ❌ CHIPS (reserved)
+
+**For ACH/Wire Capabilities:** Use FIS Global, Fiserv, or Jack Henry (available in Professional+ tiers), which provide API access to ACH and wire transfers without direct clearinghouse integration.
+
+**See:** `docs/SUPPORTED_BANKING_NETWORKS.md` for complete network list and availability.
 
 ---
 
