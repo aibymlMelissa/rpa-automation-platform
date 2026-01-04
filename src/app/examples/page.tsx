@@ -482,6 +482,127 @@ console.log('Credentials securely deleted');`}
           </code>
         </div>
       </div>
+
+      {/* Example 6: AI-Powered Adaptive Automation (NEW in v2.0.0) */}
+      <div className="card-glass bg-purple-50 border-2 border-purple-300">
+        <div className="flex items-center gap-3 mb-4">
+          <span className="text-3xl">🧠</span>
+          <h2 className="text-2xl font-bold text-purple-700">Example 6: AI-Powered Adaptive Automation (Professional+ Tiers)</h2>
+        </div>
+        <p className="text-gray-700 mb-4">
+          Use generative AI to automatically recover from banking portal changes and normalize inconsistent data formats.
+        </p>
+        <div className="code-block">
+          <code className="text-sm">
+            {`import { AdaptiveSelectorAI } from '@/services/ai/AdaptiveSelectorAI';
+import { DataNormalizerAI } from '@/services/ai/DataNormalizerAI';
+import { WebAutomation } from '@/core/extraction/WebAutomation';
+
+// 1. Adaptive Selector Recovery
+// When a banking portal changes their UI, AI automatically finds new selectors
+const automation = new WebAutomation();
+
+try {
+  await automation.click('#login-button');
+} catch (error) {
+  // Portal changed! AI to the rescue
+  console.log('Selector failed, using AI to recover...');
+
+  const newSelector = await AdaptiveSelectorAI.recover({
+    pageHTML: await automation.getHTML(),
+    originalSelector: '#login-button',
+    targetDescription: 'blue login button with white text',
+    screenshot: await automation.captureScreenshot(),
+  });
+
+  console.log(\`AI suggested new selector: \${newSelector}\`);
+  await automation.click(newSelector); // ✅ Recovered automatically!
+}
+
+// 2. Smart Data Normalization
+// Banking APIs return dates/currencies in different formats
+const messyTransactions = [
+  { date: 'Jan 15, 2025', amount: '$1,234.56', currency: 'usd' },
+  { date: '2025-01-16', amount: '2345.67 USD', currency: 'USD' },
+  { date: '17/01/25', amount: '€3,456.78', currency: 'EUR' },
+  { date: '1/18/2025', amount: '4567.89', currency: '' }, // Missing currency
+];
+
+// AI normalizes to consistent format
+const normalized = await DataNormalizerAI.normalize(messyTransactions, {
+  schema: {
+    date: 'ISO8601',
+    amount: 'number',
+    currency: 'ISO4217',
+  },
+  provider: 'deepseek', // Cost-effective for data normalization
+});
+
+console.log('Normalized data:', normalized);
+// Result:
+// [
+//   { date: '2025-01-15T00:00:00Z', amount: 1234.56, currency: 'USD' },
+//   { date: '2025-01-16T00:00:00Z', amount: 2345.67, currency: 'USD' },
+//   { date: '2025-01-17T00:00:00Z', amount: 3456.78, currency: 'EUR' },
+//   { date: '2025-01-18T00:00:00Z', amount: 4567.89, currency: 'USD' }, // AI inferred
+// ]
+
+// 3. Natural Language Job Creation (Enterprise Tier)
+import { NaturalLanguageInterface } from '@/services/ai/NaturalLanguageInterface';
+
+// User types plain English
+const command = "Extract all Stripe payments over $10,000 from last month and save to BigQuery";
+
+// AI generates job configuration
+const jobConfig = await NaturalLanguageInterface.parse(command, {
+  model: 'gpt-4', // Best for complex NL understanding
+});
+
+console.log('Generated job config:', jobConfig);
+// Result:
+// {
+//   name: 'Stripe High-Value Payments Extraction',
+//   dataSource: { type: 'stripe-api', ... },
+//   filters: { amount: { $gt: 10000 }, date: { $gte: '2024-12-01', $lte: '2024-12-31' } },
+//   destination: { type: 'bigquery', table: 'high_value_payments' },
+//   schedule: 'once'
+// }
+
+await rpaEngine.scheduleJob(jobConfig); // ✅ Job created from natural language!
+
+// 4. AI Cost Monitoring (Important!)
+import { AIUsageTracker } from '@/services/ai/AIUsageTracker';
+
+const usage = await AIUsageTracker.getMonthlyUsage();
+console.log(\`AI calls this month: \${usage.calls}\`);
+console.log(\`Estimated cost: $\${usage.estimatedCost}\`);
+console.log(\`Remaining quota: \${usage.remainingCalls}\`);
+
+// Set alerts for cost control
+await AIUsageTracker.setAlert({
+  type: 'monthly_cost',
+  threshold: 50, // Alert if > $50/month
+  action: 'email',
+  recipients: ['admin@example.com'],
+});`}
+          </code>
+        </div>
+        <div className="mt-4 bg-yellow-100 p-4 rounded border border-yellow-300">
+          <div className="flex items-start gap-3">
+            <span className="text-2xl">💡</span>
+            <div className="text-sm text-gray-800">
+              <strong>AI Tips:</strong>
+              <ul className="mt-2 space-y-1">
+                <li>• Use DeepSeek for cost-effective data normalization (~$0.14/1M tokens)</li>
+                <li>• Use Gemini for document/PDF extraction (~$0.075/1M tokens)</li>
+                <li>• Use GPT-4 for complex reasoning and NL interface (~$2.50/1M tokens)</li>
+                <li>• Enable <code>AI_DATA_MASKING=true</code> for banking compliance</li>
+                <li>• Monitor costs with <code>AI_MAX_CALLS_PER_DAY</code> rate limiting</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 }

@@ -66,6 +66,44 @@ export default function BankingNetworksPage() {
           </div>
         </div>
 
+        {/* AI-Assisted Automation (NEW v2.0.0) */}
+        <div className="bg-purple-50 border-2 border-purple-400 p-6 mb-8 rounded-lg shadow-lg">
+          <div className="flex items-start gap-4">
+            <div className="text-purple-600 text-3xl">🧠</div>
+            <div>
+              <h2 className="text-2xl font-bold text-purple-700 mb-2">
+                AI-Assisted Banking Network Automation
+              </h2>
+              <p className="text-gray-700 mb-4">
+                Enterprise tier includes AI-powered features that automatically adapt to banking portal changes:
+              </p>
+              <div className="grid md:grid-cols-3 gap-4">
+                <div className="bg-white p-4 rounded">
+                  <h3 className="text-gray-800 font-semibold mb-2">Adaptive Selectors</h3>
+                  <p className="text-gray-600 text-sm">
+                    When banking portals update their UI, AI automatically recovers by finding new selectors
+                  </p>
+                </div>
+                <div className="bg-white p-4 rounded">
+                  <h3 className="text-gray-800 font-semibold mb-2">Data Normalization</h3>
+                  <p className="text-gray-600 text-sm">
+                    Intelligently handles inconsistent date formats, currencies, and transaction descriptions across networks
+                  </p>
+                </div>
+                <div className="bg-white p-4 rounded">
+                  <h3 className="text-gray-800 font-semibold mb-2">Error Recovery</h3>
+                  <p className="text-gray-600 text-sm">
+                    AI interprets error messages and suggests recovery strategies when integrations fail
+                  </p>
+                </div>
+              </div>
+              <p className="text-gray-600 text-sm mt-4">
+                <strong>Note:</strong> AI features available in Professional+ tiers. Uses GPT-4, Gemini, or DeepSeek based on your configuration.
+              </p>
+            </div>
+          </div>
+        </div>
+
         {/* Statistics */}
         <div className="grid md:grid-cols-4 gap-4 mb-8">
           <div className="bg-green-50 border-2 border-green-400 rounded-lg p-6 text-center shadow-lg">
