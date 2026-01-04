@@ -130,74 +130,68 @@ export default function HomePage() {
       {/* Banking Networks Supported */}
       <div className="card-glass mb-8">
         <h2 className="text-2xl font-bold mb-6 text-gray-800">🏦 Banking Networks Supported</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div>
-            <h3 className="text-lg font-semibold mb-4 text-gray-700">Clearing Houses</h3>
-            <ul className="space-y-3">
-              <li className="flex items-start gap-3 p-3 bg-blue-50 rounded-lg">
-                <span className="text-2xl">🏛️</span>
-                <div>
-                  <div className="font-medium text-gray-800">ACH-NACHA</div>
-                  <div className="text-sm text-gray-600">Automated Clearing House Network</div>
-                </div>
-              </li>
-              <li className="flex items-start gap-3 p-3 bg-blue-50 rounded-lg">
-                <span className="text-2xl">🌐</span>
-                <div>
-                  <div className="font-medium text-gray-800">SWIFT</div>
-                  <div className="text-sm text-gray-600">Society for Worldwide Interbank Financial Telecommunication</div>
-                </div>
-              </li>
-              <li className="flex items-start gap-3 p-3 bg-blue-50 rounded-lg">
-                <span className="text-2xl">🏦</span>
-                <div>
-                  <div className="font-medium text-gray-800">FedWire</div>
-                  <div className="text-sm text-gray-600">Federal Reserve Wire Network</div>
-                </div>
-              </li>
-              <li className="flex items-start gap-3 p-3 bg-blue-50 rounded-lg">
-                <span className="text-2xl">💼</span>
-                <div>
-                  <div className="font-medium text-gray-800">CHIPS</div>
-                  <div className="text-sm text-gray-600">Clearing House Interbank Payments System</div>
-                </div>
-              </li>
-            </ul>
-          </div>
+        <div>
+          <h3 className="text-lg font-semibold mb-4 text-gray-700">Payment Processors & Infrastructure</h3>
+          <ul className="space-y-3">
+            <li className="flex items-start gap-3 p-3 bg-purple-50 rounded-lg">
+              <span className="text-2xl">💳</span>
+              <div>
+                <div className="font-medium text-gray-800">Visa & Mastercard</div>
+                <div className="text-sm text-gray-600">Global card payment networks</div>
+              </div>
+            </li>
+            <li className="flex items-start gap-3 p-3 bg-purple-50 rounded-lg">
+              <span className="text-2xl">💰</span>
+              <div>
+                <div className="font-medium text-gray-800">PayPal & Stripe</div>
+                <div className="text-sm text-gray-600">Online payment processors</div>
+              </div>
+            </li>
+            <li className="flex items-start gap-3 p-3 bg-purple-50 rounded-lg">
+              <span className="text-2xl">🔧</span>
+              <div>
+                <div className="font-medium text-gray-800">FIS Global & Fiserv</div>
+                <div className="text-sm text-gray-600">Shared banking infrastructure</div>
+              </div>
+            </li>
+            <li className="flex items-start gap-3 p-3 bg-purple-50 rounded-lg">
+              <span className="text-2xl">🌐</span>
+              <div>
+                <div className="font-medium text-gray-800">Direct Bank Websites</div>
+                <div className="text-sm text-gray-600">Web automation templates</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
 
-          <div>
-            <h3 className="text-lg font-semibold mb-4 text-gray-700">Payment Processors & Infrastructure</h3>
-            <ul className="space-y-3">
-              <li className="flex items-start gap-3 p-3 bg-purple-50 rounded-lg">
-                <span className="text-2xl">💳</span>
-                <div>
-                  <div className="font-medium text-gray-800">Visa & Mastercard</div>
-                  <div className="text-sm text-gray-600">Global card payment networks</div>
-                </div>
-              </li>
-              <li className="flex items-start gap-3 p-3 bg-purple-50 rounded-lg">
-                <span className="text-2xl">💰</span>
-                <div>
-                  <div className="font-medium text-gray-800">PayPal & Stripe</div>
-                  <div className="text-sm text-gray-600">Online payment processors</div>
-                </div>
-              </li>
-              <li className="flex items-start gap-3 p-3 bg-purple-50 rounded-lg">
-                <span className="text-2xl">🔧</span>
-                <div>
-                  <div className="font-medium text-gray-800">FIS Global & Fiserv</div>
-                  <div className="text-sm text-gray-600">Shared banking infrastructure</div>
-                </div>
-              </li>
-              <li className="flex items-start gap-3 p-3 bg-purple-50 rounded-lg">
-                <span className="text-2xl">🌐</span>
-                <div>
-                  <div className="font-medium text-gray-800">Direct Bank Websites</div>
-                  <div className="text-sm text-gray-600">Web automation templates</div>
-                </div>
-              </li>
-            </ul>
-          </div>
+      {/* Documentation Links */}
+      <div className="card-glass mb-8">
+        <h2 className="text-2xl font-bold mb-6 text-gray-800">📚 Documentation & Resources</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <a href="/docs/networks" className="block p-6 bg-blue-50 hover:bg-blue-100 rounded-lg border-2 border-blue-200 hover:border-blue-400 transition-all group">
+            <div className="text-3xl mb-3">🏦</div>
+            <h3 className="font-bold text-gray-800 mb-2 group-hover:text-blue-600">Banking Networks</h3>
+            <p className="text-sm text-gray-600">Complete list of supported networks and integration options</p>
+          </a>
+
+          <a href="/docs/setup" className="block p-6 bg-green-50 hover:bg-green-100 rounded-lg border-2 border-green-200 hover:border-green-400 transition-all group">
+            <div className="text-3xl mb-3">🔧</div>
+            <h3 className="font-bold text-gray-800 mb-2 group-hover:text-green-600">Setup Guide</h3>
+            <p className="text-sm text-gray-600">BigQuery & Power BI integration instructions</p>
+          </a>
+
+          <a href="/docs/pricing" className="block p-6 bg-purple-50 hover:bg-purple-100 rounded-lg border-2 border-purple-200 hover:border-purple-400 transition-all group">
+            <div className="text-3xl mb-3">💰</div>
+            <h3 className="font-bold text-gray-800 mb-2 group-hover:text-purple-600">Pricing & Budget</h3>
+            <p className="text-sm text-gray-600">Deployment tiers and cost estimates</p>
+          </a>
+
+          <a href="/docs/integrations" className="block p-6 bg-orange-50 hover:bg-orange-100 rounded-lg border-2 border-orange-200 hover:border-orange-400 transition-all group">
+            <div className="text-3xl mb-3">🤖</div>
+            <h3 className="font-bold text-gray-800 mb-2 group-hover:text-orange-600">RPA Integrations</h3>
+            <p className="text-sm text-gray-600">UiPath & Robocorp software options</p>
+          </a>
         </div>
       </div>
 
