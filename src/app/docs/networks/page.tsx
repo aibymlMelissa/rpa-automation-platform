@@ -43,18 +43,20 @@ export default function BankingNetworksPage() {
                 <div>
                   <h3 className="text-gray-800 font-semibold mb-2">✅ Available Services:</h3>
                   <ul className="text-gray-600 space-y-1">
-                    <li>• Payment Processors (Visa, Mastercard, PayPal, Stripe, Square)</li>
+                    <li>• Payment Processors (Square)</li>
                     <li>• Shared Banking Infrastructure (FIS, Fiserv, Jack Henry, Temenos)</li>
                     <li>• Direct Bank Web Automation</li>
+                    <li>• Email Authenticated Bank File Downloads</li>
+                    <li>• Manual Scan Bank Hardcopy Statements</li>
                   </ul>
                 </div>
                 <div>
-                  <h3 className="text-gray-800 font-semibold mb-2">❌ NOT Included:</h3>
+                  <h3 className="text-gray-800 font-semibold mb-2">ℹ️ Alternative Solutions:</h3>
                   <ul className="text-gray-600 space-y-1">
-                    <li>• ACH/NACHA Clearinghouse (reserved)</li>
-                    <li>• SWIFT Network (reserved)</li>
-                    <li>• FedWire (reserved)</li>
-                    <li>• CHIPS (reserved)</li>
+                    <li>• Use FIS Global for ACH processing</li>
+                    <li>• Use Fiserv for wire transfers</li>
+                    <li>• Use Jack Henry for banking APIs</li>
+                    <li>• Email/Manual processing available</li>
                   </ul>
                 </div>
               </div>
@@ -118,9 +120,9 @@ export default function BankingNetworksPage() {
             <div className="text-3xl font-bold text-purple-600">{sharedInfrastructure.length}</div>
             <div className="text-gray-600">Banking Platforms</div>
           </div>
-          <div className="bg-red-50 border-2 border-red-400 rounded-lg p-6 text-center shadow-lg">
-            <div className="text-3xl font-bold text-red-600">4</div>
-            <div className="text-gray-600">Reserved (Clearinghouses)</div>
+          <div className="bg-orange-50 border-2 border-orange-400 rounded-lg p-6 text-center shadow-lg">
+            <div className="text-3xl font-bold text-orange-600">{directBanks.length}</div>
+            <div className="text-gray-600">Direct Bank Options</div>
           </div>
         </div>
 
@@ -229,69 +231,142 @@ export default function BankingNetworksPage() {
         {/* Direct Bank Automation */}
         <section className="mb-8">
           <h2 className="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-2">
-            <span className="text-green-600">✅</span> Direct Bank Web Automation
+            <span className="text-green-600">✅</span> Direct Bank Automation & Manual Processes
             <span className="badge-success text-sm ml-2">AVAILABLE - All Tiers</span>
           </h2>
-          <div className="bg-blue-50 shadow-lg rounded-lg p-6 border border-blue-200">
-            <h3 className="text-xl font-bold text-gray-800 mb-3">Generic Bank Portal Template</h3>
-            <p className="text-gray-600 mb-4">
-              Web scraping automation for banks without API access using Puppeteer browser automation.
-            </p>
-            <div className="grid md:grid-cols-2 gap-4">
-              <div>
-                <h4 className="text-gray-800 font-semibold mb-2">Features:</h4>
-                <ul className="text-gray-600 space-y-1 text-sm">
-                  <li>• Username/Password + MFA authentication</li>
-                  <li>• Custom CSS selector configuration</li>
-                  <li>• Screenshot capture for debugging</li>
-                  <li>• Session management and cookies</li>
-                  <li>• Multi-page navigation support</li>
-                </ul>
+          <div className="grid md:grid-cols-1 gap-4">
+            {directBanks.map((network) => (
+              <div key={network.id} className="bg-blue-50 shadow-lg rounded-lg p-6 border border-blue-200">
+                <div className="flex justify-between items-start mb-3">
+                  <h3 className="text-xl font-bold text-gray-800">{network.name}</h3>
+                  <span className="badge-success text-xs">{network.category}</span>
+                </div>
+                {network.id === 'bank-template' && (
+                  <div>
+                    <p className="text-gray-600 mb-4">
+                      Web scraping automation for banks without API access using Puppeteer browser automation.
+                    </p>
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <div>
+                        <h4 className="text-gray-800 font-semibold mb-2">Features:</h4>
+                        <ul className="text-gray-600 space-y-1 text-sm">
+                          <li>• Username/Password + MFA authentication</li>
+                          <li>• Custom CSS selector configuration</li>
+                          <li>• Screenshot capture for debugging</li>
+                          <li>• Session management and cookies</li>
+                          <li>• Multi-page navigation support</li>
+                        </ul>
+                      </div>
+                      <div>
+                        <h4 className="text-gray-800 font-semibold mb-2">Best For:</h4>
+                        <ul className="text-gray-600 space-y-1 text-sm">
+                          <li>• Regional and community banks</li>
+                          <li>• Credit unions without APIs</li>
+                          <li>• Legacy banking systems</li>
+                          <li>• Custom banking portals</li>
+                          <li>• Partner bank integrations</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                )}
+                {network.id === 'email-authenticated-download' && (
+                  <div>
+                    <p className="text-gray-600 mb-4">
+                      Automated download of bank statements and transaction files from email-authenticated banking platforms.
+                      Perfect for construction companies receiving bank files via secure email links.
+                    </p>
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <div>
+                        <h4 className="text-gray-800 font-semibold mb-2">Features:</h4>
+                        <ul className="text-gray-600 space-y-1 text-sm">
+                          <li>• Email inbox monitoring (IMAP/OAuth)</li>
+                          <li>• Secure link extraction and validation</li>
+                          <li>• Automated file download and ingestion</li>
+                          <li>• Multi-format support (PDF, CSV, XLS, OFX)</li>
+                          <li>• Email authentication handling</li>
+                        </ul>
+                      </div>
+                      <div>
+                        <h4 className="text-gray-800 font-semibold mb-2">Best For:</h4>
+                        <ul className="text-gray-600 space-y-1 text-sm">
+                          <li>• Banks sending statements via email</li>
+                          <li>• Secure file delivery platforms</li>
+                          <li>• Construction company banking workflows</li>
+                          <li>• High-security financial institutions</li>
+                          <li>• Banks with limited API access</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                )}
+                {network.id === 'manual-hardcopy-scan' && (
+                  <div>
+                    <p className="text-gray-600 mb-4">
+                      Manual upload and OCR processing of scanned bank hardcopy statements and documents.
+                      Ideal for construction companies with physical banking documentation.
+                    </p>
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <div>
+                        <h4 className="text-gray-800 font-semibold mb-2">Features:</h4>
+                        <ul className="text-gray-600 space-y-1 text-sm">
+                          <li>• Drag-and-drop file upload interface</li>
+                          <li>• OCR text extraction (Tesseract.js)</li>
+                          <li>• Bank statement format recognition</li>
+                          <li>• Transaction data extraction and parsing</li>
+                          <li>• Manual validation and correction workflow</li>
+                        </ul>
+                      </div>
+                      <div>
+                        <h4 className="text-gray-800 font-semibold mb-2">Best For:</h4>
+                        <ul className="text-gray-600 space-y-1 text-sm">
+                          <li>• Physical bank statements and receipts</li>
+                          <li>• Legacy banking documentation</li>
+                          <li>• Construction project reconciliation</li>
+                          <li>• Historical record digitization</li>
+                          <li>• Banks without digital delivery</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                )}
+                <div className="space-y-2 text-sm mt-4">
+                  <div className="flex gap-2 flex-wrap">
+                    <span className="text-gray-600">Auth:</span>
+                    {network.authMethods.map((method) => (
+                      <span key={method} className="badge-primary text-xs">
+                        {method}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="flex gap-2 flex-wrap">
+                    <span className="text-gray-600">Protocols:</span>
+                    {network.protocols.map((protocol) => (
+                      <span key={protocol} className="badge-secondary text-xs">
+                        {protocol}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="flex gap-4 text-gray-600 mt-3">
+                    {network.capabilities.batch && <span>📦 Batch Processing</span>}
+                    {!network.capabilities.realTime && <span>⏱️ Scheduled Execution</span>}
+                  </div>
+                  {network.documentationUrl && (
+                    <a
+                      href={network.documentationUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-600 hover:text-blue-700 text-sm inline-block mt-2"
+                    >
+                      📚 Documentation →
+                    </a>
+                  )}
+                </div>
               </div>
-              <div>
-                <h4 className="text-gray-800 font-semibold mb-2">Best For:</h4>
-                <ul className="text-gray-600 space-y-1 text-sm">
-                  <li>• Regional and community banks</li>
-                  <li>• Credit unions without APIs</li>
-                  <li>• Legacy banking systems</li>
-                  <li>• Custom banking portals</li>
-                  <li>• Partner bank integrations</li>
-                </ul>
-              </div>
-            </div>
+            ))}
           </div>
         </section>
 
-        {/* Reserved Networks */}
-        <section className="mb-8">
-          <h2 className="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-2">
-            <span className="text-red-600">🔒</span> Reserved Networks
-            <span className="badge-danger text-sm ml-2">NOT AVAILABLE</span>
-          </h2>
-          <div className="bg-red-50 border-2 border-red-400 shadow-lg rounded-lg p-6">
-            <p className="text-gray-700 mb-4">
-              The following clearinghouse networks are reserved for the Banking Network Project
-              technical development and require separate agreements:
-            </p>
-            <div className="grid md:grid-cols-2 gap-4">
-              {['ACH/NACHA', 'SWIFT Network', 'FedWire Funds Service', 'CHIPS'].map((name) => (
-                <div key={name} className="bg-white p-4 rounded border border-red-200">
-                  <div className="flex items-center gap-2">
-                    <span className="text-red-600 text-xl">🔒</span>
-                    <span className="text-gray-800 font-semibold">{name}</span>
-                  </div>
-                  <p className="text-gray-600 text-sm mt-2">Reserved for future technical integration</p>
-                </div>
-              ))}
-            </div>
-            <div className="mt-4 bg-blue-100 p-4 rounded border border-blue-200">
-              <p className="text-gray-700 text-sm">
-                <strong>For clearinghouse inquiries:</strong> Contact Banking Network Project team
-                (separate from RPA platform pricing). Requires $500K+ annual commitment and 12-18 month development timeline.
-              </p>
-            </div>
-          </div>
-        </section>
 
         {/* Documentation Links */}
         <section className="mb-8">

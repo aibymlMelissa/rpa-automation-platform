@@ -108,72 +108,75 @@ export const CLEARING_HOUSES: BankingNetworkSource[] = [
 
 /**
  * Payment Processors - Card networks and payment gateways
+ * NOTE: Visa, Mastercard, PayPal, and Stripe are hidden for construction company use case
  */
 export const PAYMENT_PROCESSORS: BankingNetworkSource[] = [
-  {
-    id: 'visa-visanet',
-    name: 'Visa (VisaNet)',
-    type: 'payment-processor',
-    category: 'Card Networks',
-    authMethods: ['api-key', 'oauth'],
-    protocols: ['REST', 'SOAP'],
-    url: 'https://www.visa.com',
-    apiEndpoint: 'https://api.visa.com',
-    documentationUrl: 'https://developer.visa.com',
-    capabilities: {
-      realTime: true,
-      batch: true,
-      webhooks: true,
-    },
-  },
-  {
-    id: 'mastercard-network',
-    name: 'Mastercard Network',
-    type: 'payment-processor',
-    category: 'Card Networks',
-    authMethods: ['api-key', 'oauth'],
-    protocols: ['REST'],
-    url: 'https://www.mastercard.com',
-    apiEndpoint: 'https://api.mastercard.com',
-    documentationUrl: 'https://developer.mastercard.com',
-    capabilities: {
-      realTime: true,
-      batch: true,
-      webhooks: true,
-    },
-  },
-  {
-    id: 'paypal',
-    name: 'PayPal',
-    type: 'payment-processor',
-    category: 'Payment Gateway',
-    authMethods: ['oauth', 'api-key'],
-    protocols: ['REST'],
-    url: 'https://www.paypal.com',
-    apiEndpoint: 'https://api.paypal.com',
-    documentationUrl: 'https://developer.paypal.com',
-    capabilities: {
-      realTime: true,
-      batch: true,
-      webhooks: true,
-    },
-  },
-  {
-    id: 'stripe',
-    name: 'Stripe',
-    type: 'payment-processor',
-    category: 'Payment Gateway',
-    authMethods: ['api-key'],
-    protocols: ['REST'],
-    url: 'https://stripe.com',
-    apiEndpoint: 'https://api.stripe.com',
-    documentationUrl: 'https://stripe.com/docs/api',
-    capabilities: {
-      realTime: true,
-      batch: true,
-      webhooks: true,
-    },
-  },
+  // HIDDEN: Visa & Mastercard (Global card payment networks) - Not applicable for construction company
+  // {
+  //   id: 'visa-visanet',
+  //   name: 'Visa (VisaNet)',
+  //   type: 'payment-processor',
+  //   category: 'Card Networks',
+  //   authMethods: ['api-key', 'oauth'],
+  //   protocols: ['REST', 'SOAP'],
+  //   url: 'https://www.visa.com',
+  //   apiEndpoint: 'https://api.visa.com',
+  //   documentationUrl: 'https://developer.visa.com',
+  //   capabilities: {
+  //     realTime: true,
+  //     batch: true,
+  //     webhooks: true,
+  //   },
+  // },
+  // {
+  //   id: 'mastercard-network',
+  //   name: 'Mastercard Network',
+  //   type: 'payment-processor',
+  //   category: 'Card Networks',
+  //   authMethods: ['api-key', 'oauth'],
+  //   protocols: ['REST'],
+  //   url: 'https://www.mastercard.com',
+  //   apiEndpoint: 'https://api.mastercard.com',
+  //   documentationUrl: 'https://developer.mastercard.com',
+  //   capabilities: {
+  //     realTime: true,
+  //     batch: true,
+  //     webhooks: true,
+  //   },
+  // },
+  // HIDDEN: PayPal & Stripe (Online payment processors) - Not applicable for construction company
+  // {
+  //   id: 'paypal',
+  //   name: 'PayPal',
+  //   type: 'payment-processor',
+  //   category: 'Payment Gateway',
+  //   authMethods: ['oauth', 'api-key'],
+  //   protocols: ['REST'],
+  //   url: 'https://www.paypal.com',
+  //   apiEndpoint: 'https://api.paypal.com',
+  //   documentationUrl: 'https://developer.paypal.com',
+  //   capabilities: {
+  //     realTime: true,
+  //     batch: true,
+  //     webhooks: true,
+  //   },
+  // },
+  // {
+  //   id: 'stripe',
+  //   name: 'Stripe',
+  //   type: 'payment-processor',
+  //   category: 'Payment Gateway',
+  //   authMethods: ['api-key'],
+  //   protocols: ['REST'],
+  //   url: 'https://stripe.com',
+  //   apiEndpoint: 'https://api.stripe.com',
+  //   documentationUrl: 'https://stripe.com/docs/api',
+  //   capabilities: {
+  //     realTime: true,
+  //     batch: true,
+  //     webhooks: true,
+  //   },
+  // },
   {
     id: 'square',
     name: 'Square',
@@ -264,6 +267,7 @@ export const SHARED_INFRASTRUCTURE: BankingNetworkSource[] = [
 
 /**
  * Direct Bank Websites - Web automation templates for bank portals
+ * Includes email-authenticated file downloads and manual document scanning
  */
 export const DIRECT_BANKS: BankingNetworkSource[] = [
   {
@@ -273,6 +277,35 @@ export const DIRECT_BANKS: BankingNetworkSource[] = [
     category: 'Other',
     authMethods: ['username-password-mfa'],
     protocols: ['web-automation'],
+    capabilities: {
+      realTime: false,
+      batch: true,
+      webhooks: false,
+    },
+  },
+  {
+    id: 'email-authenticated-download',
+    name: 'Email Authenticated Bank File Platform Download',
+    type: 'direct-bank',
+    category: 'Other',
+    authMethods: ['username-password-mfa'],
+    protocols: ['web-automation'],
+    url: 'https://example-bank.com/file-download',
+    documentationUrl: 'https://example-bank.com/help/email-authentication',
+    capabilities: {
+      realTime: false,
+      batch: true,
+      webhooks: false,
+    },
+  },
+  {
+    id: 'manual-hardcopy-scan',
+    name: 'Manual Scan Bank Hardcopy Statements',
+    type: 'direct-bank',
+    category: 'Other',
+    authMethods: ['username-password-mfa'],
+    protocols: ['web-automation'],
+    documentationUrl: 'https://example-bank.com/help/statement-download',
     capabilities: {
       realTime: false,
       batch: true,

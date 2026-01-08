@@ -25,12 +25,12 @@ export default function HomePage() {
       <div className="card-glass mb-8">
         <h2 className="text-2xl font-bold mb-6 text-gray-800">🔄 Automated Data Flow</h2>
         <div className="flow-diagram">
-          <div className="flow-step">Data Sources</div>
+          <div className="flow-step">Bank Data Source</div>
           <div className="flow-step">Extraction</div>
           <div className="flow-step">Validation</div>
           <div className="flow-step">Transformation</div>
-          <div className="flow-step">Loading</div>
-          <div className="flow-step">Analytics</div>
+          <div className="flow-step">Load to ERP</div>
+          <div className="flow-step">Reporting</div>
         </div>
       </div>
 

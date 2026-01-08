@@ -5,7 +5,7 @@
 
 export const metadata = {
   title: 'Pricing & Budget Options | RPA Platform',
-  description: 'Complete pricing guide with 4 deployment tiers (all prices in USD)',
+  description: 'Complete pricing guide with 3 deployment tiers (all prices in USD)',
 };
 
 export default function PricingPage() {
@@ -56,11 +56,11 @@ export default function PricingPage() {
       name: 'Enterprise',
       price: '$12,950',
       setup: '$125,000',
-      best: 'Large banks, clearinghouses',
+      best: 'Large construction companies',
       networks: '20+',
       txPerDay: '1M+',
       users: '500',
-      support: '24/7 Priority',
+      support: 'Daily Operations Support',
       features: [
         'UiPath (5 robots) + Robocorp (50K)',
         'AI: Full suite (unlimited, GPT-4/Gemini/DeepSeek)',
@@ -76,30 +76,6 @@ export default function PricingPage() {
       roi: '670% annual ROI',
       payback: '1.4 months',
     },
-    {
-      name: 'Enterprise Plus',
-      price: '$69,575',
-      setup: '$650,000',
-      best: 'Multi-tenant SaaS providers',
-      networks: 'Unlimited',
-      txPerDay: '10M+',
-      users: '10,000+',
-      support: '24/7 NOC + Custom Dev',
-      features: [
-        'UiPath (25 robots) + Robocorp (500K)',
-        'AI: Custom models, fine-tuning, on-premise deployment',
-        'AI: Air-gapped local LLM infrastructure',
-        'Multi-tenant architecture',
-        'White-label capabilities',
-        'BigQuery Enterprise (100TB)',
-        'Power BI Embedded + Looker',
-        '99.99% uptime (active-active)',
-        'Custom development (40 hrs/month)',
-        'Executive sponsor',
-      ],
-      roi: '72% gross margin',
-      payback: '3.6 months (50 clients)',
-    },
   ];
 
   return (
@@ -110,7 +86,7 @@ export default function PricingPage() {
             Pricing & Budget Options
           </h1>
           <p className="text-gray-700 text-xl mb-2">
-            4 deployment tiers to fit your needs and budget
+            3 deployment tiers to fit your needs and budget
           </p>
           <p className="text-blue-600 font-semibold text-lg">
             💵 All prices in USD (United States Dollars)
@@ -133,7 +109,7 @@ export default function PricingPage() {
         </div>
 
         {/* Pricing Cards */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {tiers.map((tier) => (
             <div
               key={tier.name}
@@ -206,7 +182,6 @@ export default function PricingPage() {
                   <th className="p-4 text-green-600">Starter</th>
                   <th className="p-4 text-green-600">Professional</th>
                   <th className="p-4 text-green-600">Enterprise</th>
-                  <th className="p-4 text-green-600">Enterprise Plus</th>
                 </tr>
               </thead>
               <tbody className="text-gray-700">
@@ -215,56 +190,48 @@ export default function PricingPage() {
                   <td className="p-4 text-center">$105</td>
                   <td className="p-4 text-center">$1,167</td>
                   <td className="p-4 text-center">$12,950</td>
-                  <td className="p-4 text-center">$69,575</td>
                 </tr>
                 <tr className="border-b border-gray-300">
                   <td className="p-4 font-semibold text-blue-600">Banking Networks</td>
                   <td className="p-4 text-center">3</td>
                   <td className="p-4 text-center">10</td>
                   <td className="p-4 text-center">20+</td>
-                  <td className="p-4 text-center">Unlimited</td>
                 </tr>
                 <tr className="border-b border-gray-300">
                   <td className="p-4 font-semibold text-blue-600">UiPath Robots</td>
                   <td className="p-4 text-center text-red-600">✗</td>
                   <td className="p-4 text-center text-red-600">✗</td>
                   <td className="p-4 text-center text-green-600">5</td>
-                  <td className="p-4 text-center text-green-600">25</td>
                 </tr>
                 <tr className="border-b border-gray-300">
                   <td className="p-4 font-semibold text-blue-600">Robocorp Runs</td>
                   <td className="p-4 text-center text-red-600">✗</td>
                   <td className="p-4 text-center text-green-600">10K/month</td>
                   <td className="p-4 text-center text-green-600">50K/month</td>
-                  <td className="p-4 text-center text-green-600">500K/month</td>
                 </tr>
                 <tr className="border-b border-gray-300">
                   <td className="p-4 font-semibold text-blue-600">BigQuery</td>
                   <td className="p-4 text-center text-red-600">✗</td>
                   <td className="p-4 text-center text-green-600">1TB queries</td>
                   <td className="p-4 text-center text-green-600">10TB queries</td>
-                  <td className="p-4 text-center text-green-600">100TB queries</td>
                 </tr>
                 <tr className="border-b border-gray-300">
                   <td className="p-4 font-semibold text-blue-600">Power BI</td>
                   <td className="p-4 text-center text-red-600">✗</td>
                   <td className="p-4 text-center text-green-600">Pro (5 users)</td>
                   <td className="p-4 text-center text-green-600">Premium</td>
-                  <td className="p-4 text-center text-green-600">Embedded</td>
                 </tr>
                 <tr className="border-b border-gray-300">
                   <td className="p-4 font-semibold text-blue-600">Uptime SLA</td>
                   <td className="p-4 text-center">99%</td>
                   <td className="p-4 text-center">99.5%</td>
                   <td className="p-4 text-center">99.9%</td>
-                  <td className="p-4 text-center">99.99%</td>
                 </tr>
                 <tr>
                   <td className="p-4 font-semibold text-blue-600">Support</td>
                   <td className="p-4 text-center">Community</td>
                   <td className="p-4 text-center">8x5 Email</td>
-                  <td className="p-4 text-center">24/7 Priority</td>
-                  <td className="p-4 text-center">24/7 NOC</td>
+                  <td className="p-4 text-center">Business Hours Priority</td>
                 </tr>
               </tbody>
             </table>
