@@ -12,7 +12,23 @@ export default function DeploymentPage() {
       {/* Deployment Options */}
       <div className="card-glass mb-8">
         <h2 className="text-2xl font-bold mb-6 text-gray-800">Deployment Options</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="feature-card border-t-4 border-orange-500">
+            <div className="text-4xl mb-4 text-center">🖥️</div>
+            <h3 className="text-xl font-bold mb-3 text-gray-800 text-center">Local Server</h3>
+            <p className="text-sm text-gray-600 text-center mb-4">
+              On-premise deployment with local infrastructure
+            </p>
+            <ul className="text-sm text-gray-600 space-y-2">
+              <li>• Windows/Linux server deployment</li>
+              <li>• Microsoft Dynamic SL integration</li>
+              <li>• Standalone Power BI Desktop/Pro</li>
+              <li>• Local PostgreSQL database</li>
+              <li>• AI Engine Server (GPU optional)</li>
+              <li>• Full data sovereignty & control</li>
+            </ul>
+          </div>
+
           <div className="feature-card border-t-4 border-blue-500">
             <div className="text-4xl mb-4 text-center">☁️</div>
             <h3 className="text-xl font-bold mb-3 text-gray-800 text-center">Microsoft Azure</h3>
@@ -56,6 +72,95 @@ export default function DeploymentPage() {
               <li>• OCI Container Engine</li>
               <li>• Oracle Analytics Cloud</li>
             </ul>
+          </div>
+        </div>
+      </div>
+
+      {/* Local Server Deployment Details */}
+      <div className="card-glass mb-8">
+        <h2 className="text-2xl font-bold mb-6 text-gray-800">Local Server Deployment Architecture</h2>
+        <p className="text-gray-600 mb-6">
+          On-premise deployment option for organizations requiring full data sovereignty, air-gapped environments, or integration with existing local infrastructure.
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          <div className="p-5 bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg border-l-4 border-blue-500">
+            <h3 className="text-lg font-bold mb-3 text-gray-800">Server Components</h3>
+            <ul className="text-sm text-gray-600 space-y-2">
+              <li>• <strong>RPA Application Server</strong> - Node.js runtime</li>
+              <li>• <strong>PostgreSQL Database</strong> - Transactional data storage</li>
+              <li>• <strong>Redis Server</strong> - Queue management & caching</li>
+              <li>• <strong>Microsoft Dynamic SL</strong> - ERP integration</li>
+              <li>• <strong>AI Engine Server</strong> - Computer vision & NLP processing</li>
+            </ul>
+          </div>
+
+          <div className="p-5 bg-gradient-to-br from-purple-50 to-purple-100 rounded-lg border-l-4 border-purple-500">
+            <h3 className="text-lg font-bold mb-3 text-gray-800">Analytics & Reporting</h3>
+            <ul className="text-sm text-gray-600 space-y-2">
+              <li>• <strong>Power BI Desktop</strong> - Local report development</li>
+              <li>• <strong>Power BI Pro</strong> - Team collaboration (optional)</li>
+              <li>• <strong>Direct Query</strong> - Connect to PostgreSQL</li>
+              <li>• <strong>Scheduled Refresh</strong> - Automated data updates</li>
+              <li>• <strong>Custom Dashboards</strong> - Tailored analytics</li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="p-5 bg-gradient-to-br from-green-50 to-green-100 rounded-lg border-l-4 border-green-500 mb-6">
+          <h3 className="text-lg font-bold mb-3 text-gray-800">AI Engine Server Specifications</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <h4 className="font-semibold text-gray-700 mb-2 text-sm">CPU-Based (Budget Option)</h4>
+              <ul className="text-sm text-gray-600 space-y-1">
+                <li>• Intel Xeon or AMD EPYC processor</li>
+                <li>• 16+ CPU cores recommended</li>
+                <li>• 32GB+ RAM for TensorFlow.js</li>
+                <li>• Suitable for light workloads</li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold text-gray-700 mb-2 text-sm">GPU-Accelerated (Performance)</h4>
+              <ul className="text-sm text-gray-600 space-y-1">
+                <li>• NVIDIA GPU with CUDA support</li>
+                <li>• 8GB+ VRAM (e.g., RTX 3060, A4000)</li>
+                <li>• 10x faster AI processing</li>
+                <li>• Recommended for production</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div className="p-5 bg-yellow-50 rounded-lg border-l-4 border-yellow-500">
+          <h3 className="text-lg font-bold mb-2 text-gray-800">Minimum Hardware Requirements</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+            <div>
+              <h4 className="font-semibold text-gray-700 mb-2">Starter Tier</h4>
+              <ul className="text-gray-600 space-y-1">
+                <li>• 4 CPU cores</li>
+                <li>• 16GB RAM</li>
+                <li>• 500GB SSD</li>
+                <li>• 1Gbps network</li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold text-gray-700 mb-2">Professional Tier</h4>
+              <ul className="text-gray-600 space-y-1">
+                <li>• 8 CPU cores</li>
+                <li>• 32GB RAM</li>
+                <li>• 1TB SSD</li>
+                <li>• 10Gbps network</li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold text-gray-700 mb-2">Enterprise Tier</h4>
+              <ul className="text-gray-600 space-y-1">
+                <li>• 16+ CPU cores</li>
+                <li>• 64GB+ RAM</li>
+                <li>• 2TB+ NVMe SSD</li>
+                <li>• 10Gbps+ network</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>

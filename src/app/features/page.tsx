@@ -11,72 +11,33 @@ export default function FeaturesPage() {
 
       {/* Core Features Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-        {/* Web Automation */}
-        <div className="feature-card">
-          <div className="feature-icon">🤖</div>
-          <h3 className="text-xl font-bold mb-3 text-gray-800">Web Automation</h3>
-          <p className="text-gray-600 text-sm mb-4">
-            Headless browser automation with intelligent form detection and AI-powered element selection
-          </p>
-          <ul className="text-sm text-gray-600 space-y-2">
-            <li className="flex items-start gap-2">
-              <span className="text-green-600">✓</span>
-              <span>Puppeteer & Playwright support for cross-browser automation</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-green-600">✓</span>
-              <span>Multi-tab session management with cookie persistence</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-green-600">✓</span>
-              <span>Dynamic element detection using CSS selectors and XPath</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-green-600">✓</span>
-              <span>Screenshot and PDF capture for audit trails</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-green-600">✓</span>
-              <span>Automatic retry logic with exponential backoff</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-green-600">✓</span>
-              <span>CAPTCHA detection and solving integration</span>
-            </li>
-          </ul>
-        </div>
-
-        {/* API Integration */}
+        {/* Data Extraction */}
         <div className="feature-card">
           <div className="feature-icon">🔌</div>
-          <h3 className="text-xl font-bold mb-3 text-gray-800">API Integration</h3>
+          <h3 className="text-xl font-bold mb-3 text-gray-800">Data Extraction</h3>
           <p className="text-gray-600 text-sm mb-4">
-            Multi-protocol API extraction supporting REST, SOAP, FIX, and ISO 20022
+            Multi-protocol support for web automation and API integration
           </p>
           <ul className="text-sm text-gray-600 space-y-2">
             <li className="flex items-start gap-2">
               <span className="text-green-600">✓</span>
-              <span>REST API with OAuth 2.0, JWT, and API key authentication</span>
+              <span>Web automation with Puppeteer/Playwright</span>
             </li>
             <li className="flex items-start gap-2">
               <span className="text-green-600">✓</span>
-              <span>SOAP/XML web services with WSDL parsing</span>
+              <span>REST API with OAuth 2.0, JWT authentication</span>
             </li>
             <li className="flex items-start gap-2">
               <span className="text-green-600">✓</span>
-              <span>FIX Protocol for financial message exchange</span>
+              <span>SOAP/XML and FIX Protocol support</span>
             </li>
             <li className="flex items-start gap-2">
               <span className="text-green-600">✓</span>
-              <span>ISO 20022 XML messaging (SWIFT MX messages)</span>
+              <span>Email/SMS file download automation</span>
             </li>
             <li className="flex items-start gap-2">
               <span className="text-green-600">✓</span>
-              <span>Rate limiting and throttling controls</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-green-600">✓</span>
-              <span>Webhook support for event-driven data push</span>
+              <span>OCR for hardcopy document processing</span>
             </li>
           </ul>
         </div>
@@ -151,95 +112,25 @@ export default function FeaturesPage() {
           </ul>
         </div>
 
-        {/* Job Scheduling */}
+        {/* Job Scheduling & Processing */}
         <div className="feature-card">
-          <div className="feature-icon">⏰</div>
-          <h3 className="text-xl font-bold mb-3 text-gray-800">Job Scheduling</h3>
+          <div className="feature-icon">⚙️</div>
+          <h3 className="text-xl font-bold mb-3 text-gray-800">Job Scheduling & Processing</h3>
           <p className="text-gray-600 text-sm mb-4">
-            Flexible cron-based scheduling with distributed queue management
+            Automated scheduling and ETL pipeline with queue management
           </p>
           <ul className="text-sm text-gray-600 space-y-2">
             <li className="flex items-start gap-2">
               <span className="text-green-600">✓</span>
-              <span>Cron expressions for complex scheduling patterns</span>
+              <span>Cron-based scheduling with BullMQ queues</span>
             </li>
             <li className="flex items-start gap-2">
               <span className="text-green-600">✓</span>
-              <span>BullMQ-powered distributed job queue with Redis</span>
+              <span>Automatic retry & error handling</span>
             </li>
             <li className="flex items-start gap-2">
               <span className="text-green-600">✓</span>
-              <span>Job priority and concurrency limits</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-green-600">✓</span>
-              <span>Automatic retry with exponential backoff</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-green-600">✓</span>
-              <span>Job dependencies and conditional execution</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-green-600">✓</span>
-              <span>Real-time job monitoring and progress tracking</span>
-            </li>
-          </ul>
-        </div>
-
-        {/* Security & Compliance */}
-        <div className="feature-card">
-          <div className="feature-icon">🔒</div>
-          <h3 className="text-xl font-bold mb-3 text-gray-800">Enterprise Security</h3>
-          <p className="text-gray-600 text-sm mb-4">
-            Bank-grade security with encryption, vaulting, and audit logging
-          </p>
-          <ul className="text-sm text-gray-600 space-y-2">
-            <li className="flex items-start gap-2">
-              <span className="text-green-600">✓</span>
-              <span>AES-256-GCM encryption for credential storage</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-green-600">✓</span>
-              <span>PBKDF2 key derivation (100,000 iterations)</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-green-600">✓</span>
-              <span>Automatic credential rotation and expiration</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-green-600">✓</span>
-              <span>Immutable audit logs with tamper detection</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-green-600">✓</span>
-              <span>PCI-DSS, GDPR, SOC2, ISO27001 compliance modes</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-green-600">✓</span>
-              <span>Role-based access control (RBAC)</span>
-            </li>
-          </ul>
-        </div>
-
-        {/* Data Pipeline */}
-        <div className="feature-card">
-          <div className="feature-icon">🔄</div>
-          <h3 className="text-xl font-bold mb-3 text-gray-800">ETL Pipeline</h3>
-          <p className="text-gray-600 text-sm mb-4">
-            Automated Extract, Transform, Load pipeline with validation
-          </p>
-          <ul className="text-sm text-gray-600 space-y-2">
-            <li className="flex items-start gap-2">
-              <span className="text-green-600">✓</span>
-              <span>Schema validation with detailed error reporting</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-green-600">✓</span>
-              <span>Data type conversion and normalization</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-green-600">✓</span>
-              <span>Field mapping and transformation rules</span>
+              <span>Data validation & transformation</span>
             </li>
             <li className="flex items-start gap-2">
               <span className="text-green-600">✓</span>
@@ -247,67 +138,89 @@ export default function FeaturesPage() {
             </li>
             <li className="flex items-start gap-2">
               <span className="text-green-600">✓</span>
-              <span>Multi-destination loading (PostgreSQL, S3, Data Warehouse)</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-green-600">✓</span>
-              <span>Data quality metrics and monitoring</span>
+              <span>Load to PostgreSQL & Dynamic SL</span>
             </li>
           </ul>
         </div>
       </div>
 
-      {/* Authentication Methods */}
+      {/* Enterprise Security - Customizable for Client Needs */}
       <div className="card-glass mb-8">
-        <h2 className="text-2xl font-bold mb-6 text-gray-800">Supported Authentication Methods</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="p-5 bg-gradient-to-r from-blue-50 to-blue-100 rounded-lg border-l-4 border-blue-500">
-            <h3 className="text-lg font-bold mb-3 text-gray-800">OAuth 2.0</h3>
-            <p className="text-sm text-gray-600 mb-3">
-              Token-based authentication with automatic refresh
-            </p>
+        <h2 className="text-2xl font-bold mb-6 text-gray-800">🔒 Enterprise Security</h2>
+        <p className="text-gray-600 mb-6">
+          Bank-grade security framework customizable to your organization's requirements and compliance needs
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="p-5 bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg border-l-4 border-blue-500">
+            <h3 className="text-lg font-bold mb-3 text-gray-800">Data Protection</h3>
             <ul className="text-sm text-gray-600 space-y-2">
-              <li>• Authorization Code Flow</li>
-              <li>• Client Credentials Flow</li>
-              <li>• Token rotation and expiration</li>
+              <li>• AES-256-GCM encryption at rest</li>
+              <li>• TLS 1.3 encryption in transit</li>
+              <li>• Secure credential vaulting</li>
+              <li>• PBKDF2 key derivation (100K+ iterations)</li>
+              <li>• Automatic credential rotation</li>
             </ul>
           </div>
 
-          <div className="p-5 bg-gradient-to-r from-purple-50 to-purple-100 rounded-lg border-l-4 border-purple-500">
-            <h3 className="text-lg font-bold mb-3 text-gray-800">Multi-Factor Authentication</h3>
-            <p className="text-sm text-gray-600 mb-3">
-              Support for various MFA methods
-            </p>
+          <div className="p-5 bg-gradient-to-br from-purple-50 to-purple-100 rounded-lg border-l-4 border-purple-500">
+            <h3 className="text-lg font-bold mb-3 text-gray-800">Authentication & Access</h3>
             <ul className="text-sm text-gray-600 space-y-2">
-              <li>• TOTP (Time-based One-Time Password)</li>
-              <li>• SMS/Email verification codes</li>
-              <li>• Hardware token support</li>
+              <li>• OAuth 2.0, JWT, API Keys</li>
+              <li>• Certificate-based (X.509, mTLS)</li>
+              <li>• Multi-factor authentication (TOTP, SMS, Email)</li>
+              <li>• Role-based access control (RBAC)</li>
+              <li>• Single Sign-On (SSO) integration</li>
             </ul>
           </div>
 
-          <div className="p-5 bg-gradient-to-r from-green-50 to-green-100 rounded-lg border-l-4 border-green-500">
-            <h3 className="text-lg font-bold mb-3 text-gray-800">API Keys</h3>
-            <p className="text-sm text-gray-600 mb-3">
-              Custom header-based authentication
-            </p>
+          <div className="p-5 bg-gradient-to-br from-green-50 to-green-100 rounded-lg border-l-4 border-green-500">
+            <h3 className="text-lg font-bold mb-3 text-gray-800">Audit & Compliance</h3>
             <ul className="text-sm text-gray-600 space-y-2">
-              <li>• X-API-Key headers</li>
-              <li>• Custom authentication headers</li>
-              <li>• Key rotation support</li>
+              <li>• Immutable audit logs</li>
+              <li>• Tamper detection & alerts</li>
+              <li>• PCI-DSS compliance ready</li>
+              <li>• GDPR data protection</li>
+              <li>• SOC 2, ISO 27001 frameworks</li>
             </ul>
           </div>
 
-          <div className="p-5 bg-gradient-to-r from-yellow-50 to-yellow-100 rounded-lg border-l-4 border-yellow-500">
-            <h3 className="text-lg font-bold mb-3 text-gray-800">Certificate-Based</h3>
-            <p className="text-sm text-gray-600 mb-3">
-              X.509 certificates and mutual TLS
-            </p>
+          <div className="p-5 bg-gradient-to-br from-yellow-50 to-yellow-100 rounded-lg border-l-4 border-yellow-500">
+            <h3 className="text-lg font-bold mb-3 text-gray-800">Network Security</h3>
             <ul className="text-sm text-gray-600 space-y-2">
-              <li>• Client certificate authentication</li>
-              <li>• Mutual TLS (mTLS)</li>
-              <li>• Certificate chain validation</li>
+              <li>• Private VPC deployment</li>
+              <li>• IP whitelisting</li>
+              <li>• Firewall rules customization</li>
+              <li>• DDoS protection</li>
+              <li>• Network isolation</li>
             </ul>
           </div>
+
+          <div className="p-5 bg-gradient-to-br from-red-50 to-red-100 rounded-lg border-l-4 border-red-500">
+            <h3 className="text-lg font-bold mb-3 text-gray-800">Monitoring & Alerts</h3>
+            <ul className="text-sm text-gray-600 space-y-2">
+              <li>• Real-time security monitoring</li>
+              <li>• Intrusion detection</li>
+              <li>• Anomaly detection with AI</li>
+              <li>• Automated incident response</li>
+              <li>• Security event notifications</li>
+            </ul>
+          </div>
+
+          <div className="p-5 bg-gradient-to-br from-indigo-50 to-indigo-100 rounded-lg border-l-4 border-indigo-500">
+            <h3 className="text-lg font-bold mb-3 text-gray-800">Enterprise Options</h3>
+            <ul className="text-sm text-gray-600 space-y-2">
+              <li>• On-premise deployment</li>
+              <li>• Air-gapped environment support</li>
+              <li>• Custom security policies</li>
+              <li>• Penetration testing support</li>
+              <li>• Dedicated security team</li>
+            </ul>
+          </div>
+        </div>
+        <div className="mt-6 p-4 bg-blue-50 rounded-lg border-l-4 border-blue-500">
+          <p className="text-sm text-gray-700">
+            <strong>Note:</strong> Security features can be customized based on your organization's specific requirements, compliance obligations, and industry regulations. Contact us to discuss your security needs.
+          </p>
         </div>
       </div>
 

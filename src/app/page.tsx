@@ -1,3 +1,6 @@
+import DocumentationLinks from '@/components/DocumentationLinks';
+import SystemInformation from '@/components/SystemInformation';
+
 export default function HomePage() {
   return (
     <>
@@ -106,46 +109,6 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* Technology Stack */}
-      <div className="card-glass mb-8">
-        <h2 className="text-2xl font-bold mb-6 text-gray-800">⚙️ Technology Stack</h2>
-        <div className="space-y-4">
-          <div>
-            <h3 className="text-sm font-semibold text-gray-700 mb-2">Core Technologies</h3>
-            <div className="flex flex-wrap gap-3">
-              <span className="tech-tag">TypeScript</span>
-              <span className="tech-tag">Next.js 14</span>
-              <span className="tech-tag">React</span>
-              <span className="tech-tag">Node.js</span>
-              <span className="tech-tag">Puppeteer</span>
-              <span className="tech-tag">Playwright</span>
-            </div>
-          </div>
-          <div>
-            <h3 className="text-sm font-semibold text-gray-700 mb-2">AI & Machine Learning</h3>
-            <div className="flex flex-wrap gap-3">
-              <span className="tech-tag bg-purple-100 text-purple-700">TensorFlow.js</span>
-              <span className="tech-tag bg-purple-100 text-purple-700">OpenAI GPT-4</span>
-              <span className="tech-tag bg-purple-100 text-purple-700">Google Gemini</span>
-              <span className="tech-tag bg-purple-100 text-purple-700">DeepSeek</span>
-              <span className="tech-tag bg-purple-100 text-purple-700">Local Llama 3</span>
-            </div>
-          </div>
-          <div>
-            <h3 className="text-sm font-semibold text-gray-700 mb-2">Infrastructure</h3>
-            <div className="flex flex-wrap gap-3">
-              <span className="tech-tag">BullMQ</span>
-              <span className="tech-tag">Redis</span>
-              <span className="tech-tag">PostgreSQL</span>
-              <span className="tech-tag">Dynamics 365 Business Central</span>
-              <span className="tech-tag">Microsoft Azure</span>
-              <span className="tech-tag">Power BI Premium</span>
-              <span className="tech-tag">Oracle Finance (Alternative)</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
       {/* Banking Networks Supported */}
       <div className="card-glass mb-8">
         <h2 className="text-2xl font-bold mb-6 text-gray-800">🏦 Banking Networks Supported</h2>
@@ -178,85 +141,10 @@ export default function HomePage() {
       </div>
 
       {/* Documentation Links */}
-      <div className="card-glass mb-8">
-        <h2 className="text-2xl font-bold mb-6 text-gray-800">📚 Documentation & Resources</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-          <a href="/docs/networks" className="block p-6 bg-blue-50 hover:bg-blue-100 rounded-lg border-2 border-blue-200 hover:border-blue-400 transition-all group">
-            <div className="text-3xl mb-3">🏦</div>
-            <h3 className="font-bold text-gray-800 mb-2 group-hover:text-blue-600">Banking Networks</h3>
-            <p className="text-sm text-gray-600">Complete list of supported networks and integration options</p>
-          </a>
-
-          <a href="/docs/setup" className="block p-6 bg-green-50 hover:bg-green-100 rounded-lg border-2 border-green-200 hover:border-green-400 transition-all group">
-            <div className="text-3xl mb-3">🔧</div>
-            <h3 className="font-bold text-gray-800 mb-2 group-hover:text-green-600">Setup Guide</h3>
-            <p className="text-sm text-gray-600">BigQuery & Power BI integration instructions</p>
-          </a>
-
-          <a href="/docs/pricing" className="block p-6 bg-purple-50 hover:bg-purple-100 rounded-lg border-2 border-purple-200 hover:border-purple-400 transition-all group">
-            <div className="text-3xl mb-3">💰</div>
-            <h3 className="font-bold text-gray-800 mb-2 group-hover:text-purple-600">Pricing & Budget</h3>
-            <p className="text-sm text-gray-600">Deployment tiers and cost estimates</p>
-          </a>
-
-          <a href="/docs/integrations" className="block p-6 bg-orange-50 hover:bg-orange-100 rounded-lg border-2 border-orange-200 hover:border-orange-400 transition-all group">
-            <div className="text-3xl mb-3">🤖</div>
-            <h3 className="font-bold text-gray-800 mb-2 group-hover:text-orange-600">RPA Integrations</h3>
-            <p className="text-sm text-gray-600">UiPath & Robocorp software options</p>
-          </a>
-        </div>
-      </div>
+      <DocumentationLinks />
 
       {/* System Information */}
-      <div className="card-glass">
-        <h2 className="text-2xl font-bold mb-6 text-gray-800">ℹ️ System Information</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div>
-            <h3 className="text-lg font-semibold mb-3 text-gray-700">Current Status</h3>
-            <div className="space-y-3">
-              <div className="flex items-center justify-between p-3 bg-green-50 rounded-lg border border-green-200">
-                <div className="flex items-center gap-3">
-                  <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-                  <span className="font-medium text-gray-800">Next.js Server</span>
-                </div>
-                <span className="badge-success">Running</span>
-              </div>
-              <div className="flex items-center justify-between p-3 bg-blue-50 rounded-lg border border-blue-200">
-                <div className="flex items-center gap-3">
-                  <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
-                  <span className="font-medium text-gray-800">Backend Services</span>
-                </div>
-                <span className="badge-info">Ready</span>
-              </div>
-              <div className="flex items-center justify-between p-3 bg-yellow-50 rounded-lg border border-yellow-200">
-                <div className="flex items-center gap-3">
-                  <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                  <span className="font-medium text-gray-800">WebSocket Server</span>
-                </div>
-                <span className="badge-warning">Start with npm run websocket</span>
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <h3 className="text-lg font-semibold mb-3 text-gray-700">Quick Info</h3>
-            <div className="space-y-3 text-sm">
-              <div className="p-3 bg-gray-50 rounded-lg">
-                <div className="font-medium text-gray-700 mb-1">Version</div>
-                <div className="text-gray-600">2.0.0 (AI-Enhanced)</div>
-              </div>
-              <div className="p-3 bg-gray-50 rounded-lg">
-                <div className="font-medium text-gray-700 mb-1">Environment</div>
-                <div className="text-gray-600">Development</div>
-              </div>
-              <div className="p-3 bg-gray-50 rounded-lg">
-                <div className="font-medium text-gray-700 mb-1">Framework</div>
-                <div className="text-gray-600">Next.js 14 (App Router)</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <SystemInformation />
     </>
   );
 }
