@@ -1,3 +1,6 @@
+import EnvironmentConfig from '@/components/deployment/EnvironmentConfig';
+import CICDPipeline from '@/components/deployment/CICDPipeline';
+
 export default function DeploymentPage() {
   return (
     <>
@@ -12,53 +15,161 @@ export default function DeploymentPage() {
       {/* Deployment Options */}
       <div className="card-glass mb-8">
         <h2 className="text-2xl font-bold mb-6 text-gray-800">Deployment Options</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="feature-card border-t-4 border-blue-500">
-            <div className="text-4xl mb-4 text-center">🐳</div>
-            <h3 className="text-xl font-bold mb-3 text-gray-800 text-center">Docker</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="feature-card border-t-4 border-orange-500">
+            <div className="text-4xl mb-4 text-center">🖥️</div>
+            <h3 className="text-xl font-bold mb-3 text-gray-800 text-center">Local Server</h3>
             <p className="text-sm text-gray-600 text-center mb-4">
-              Containerized deployment for consistent environments
+              On-premise deployment with local infrastructure
             </p>
             <ul className="text-sm text-gray-600 space-y-2">
-              <li>• Multi-stage builds for optimization</li>
-              <li>• Docker Compose for local development</li>
-              <li>• Health checks and restart policies</li>
-              <li>• Volume mounts for data persistence</li>
+              <li>• Windows/Linux server deployment</li>
+              <li>• Microsoft Dynamic SL integration</li>
+              <li>• Standalone Power BI Desktop/Pro</li>
+              <li>• Local PostgreSQL database</li>
+              <li>• AI Engine Server (GPU optional)</li>
+              <li>• Full data sovereignty & control</li>
+            </ul>
+          </div>
+
+          <div className="feature-card border-t-4 border-blue-500">
+            <div className="text-4xl mb-4 text-center">☁️</div>
+            <h3 className="text-xl font-bold mb-3 text-gray-800 text-center">Microsoft Azure</h3>
+            <p className="text-sm text-gray-600 text-center mb-4">
+              Cloud deployment on Microsoft Azure for Dynamics 365 integration
+            </p>
+            <ul className="text-sm text-gray-600 space-y-2">
+              <li>• Azure App Service for RPA platform</li>
+              <li>• Native Dynamics 365 connectivity</li>
+              <li>• Azure SQL Database / PostgreSQL</li>
+              <li>• Azure Cache for Redis</li>
+              <li>• Power BI Premium integration</li>
             </ul>
           </div>
 
           <div className="feature-card border-t-4 border-purple-500">
-            <div className="text-4xl mb-4 text-center">☸️</div>
-            <h3 className="text-xl font-bold mb-3 text-gray-800 text-center">Kubernetes</h3>
+            <div className="text-4xl mb-4 text-center">▲</div>
+            <h3 className="text-xl font-bold mb-3 text-gray-800 text-center">Vercel</h3>
             <p className="text-sm text-gray-600 text-center mb-4">
-              Orchestrated deployment for enterprise scale
+              Fast deployment for Next.js RPA platform frontend
             </p>
             <ul className="text-sm text-gray-600 space-y-2">
-              <li>• Horizontal pod autoscaling</li>
-              <li>• Rolling updates with zero downtime</li>
-              <li>• ConfigMaps and Secrets management</li>
-              <li>• Ingress controllers for routing</li>
+              <li>• Instant deployment from GitHub</li>
+              <li>• Global CDN with edge functions</li>
+              <li>• Automatic HTTPS and SSL</li>
+              <li>• Preview deployments for testing</li>
+              <li>• Zero-config Next.js optimization</li>
             </ul>
           </div>
 
           <div className="feature-card border-t-4 border-green-500">
-            <div className="text-4xl mb-4 text-center">☁️</div>
-            <h3 className="text-xl font-bold mb-3 text-gray-800 text-center">Cloud Native</h3>
+            <div className="text-4xl mb-4 text-center">🔶</div>
+            <h3 className="text-xl font-bold mb-3 text-gray-800 text-center">Oracle Cloud</h3>
             <p className="text-sm text-gray-600 text-center mb-4">
-              Managed services on GCP, AWS, or Azure
+              Alternative deployment for Oracle Finance integration
             </p>
             <ul className="text-sm text-gray-600 space-y-2">
-              <li>• Cloud Run / ECS / App Service</li>
-              <li>• Managed databases and Redis</li>
-              <li>• CDN and load balancing</li>
-              <li>• Auto-scaling based on metrics</li>
+              <li>• Oracle Cloud Infrastructure (OCI)</li>
+              <li>• Native Oracle Finance connectivity</li>
+              <li>• Oracle Autonomous Database</li>
+              <li>• OCI Container Engine</li>
+              <li>• Oracle Analytics Cloud</li>
             </ul>
           </div>
         </div>
       </div>
 
-      {/* Docker Setup */}
+      {/* Local Server Deployment Details */}
       <div className="card-glass mb-8">
+        <h2 className="text-2xl font-bold mb-6 text-gray-800">Local Server Deployment Architecture</h2>
+        <p className="text-gray-600 mb-6">
+          On-premise deployment option for organizations requiring full data sovereignty, air-gapped environments, or integration with existing local infrastructure.
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          <div className="p-5 bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg border-l-4 border-blue-500">
+            <h3 className="text-lg font-bold mb-3 text-gray-800">Server Components</h3>
+            <ul className="text-sm text-gray-600 space-y-2">
+              <li>• <strong>RPA Application Server</strong> - Node.js runtime</li>
+              <li>• <strong>PostgreSQL Database</strong> - Transactional data storage</li>
+              <li>• <strong>Redis Server</strong> - Queue management & caching</li>
+              <li>• <strong>Microsoft Dynamic SL</strong> - ERP integration</li>
+              <li>• <strong>AI Engine Server</strong> - Computer vision & NLP processing</li>
+            </ul>
+          </div>
+
+          <div className="p-5 bg-gradient-to-br from-purple-50 to-purple-100 rounded-lg border-l-4 border-purple-500">
+            <h3 className="text-lg font-bold mb-3 text-gray-800">Analytics & Reporting</h3>
+            <ul className="text-sm text-gray-600 space-y-2">
+              <li>• <strong>Power BI Desktop</strong> - Local report development</li>
+              <li>• <strong>Power BI Pro</strong> - Team collaboration (optional)</li>
+              <li>• <strong>Direct Query</strong> - Connect to PostgreSQL</li>
+              <li>• <strong>Scheduled Refresh</strong> - Automated data updates</li>
+              <li>• <strong>Custom Dashboards</strong> - Tailored analytics</li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="p-5 bg-gradient-to-br from-green-50 to-green-100 rounded-lg border-l-4 border-green-500 mb-6">
+          <h3 className="text-lg font-bold mb-3 text-gray-800">AI Engine Server Specifications</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <h4 className="font-semibold text-gray-700 mb-2 text-sm">CPU-Based (Budget Option)</h4>
+              <ul className="text-sm text-gray-600 space-y-1">
+                <li>• Intel Xeon or AMD EPYC processor</li>
+                <li>• 16+ CPU cores recommended</li>
+                <li>• 32GB+ RAM for TensorFlow.js</li>
+                <li>• Suitable for light workloads</li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold text-gray-700 mb-2 text-sm">GPU-Accelerated (Performance)</h4>
+              <ul className="text-sm text-gray-600 space-y-1">
+                <li>• NVIDIA GPU with CUDA support</li>
+                <li>• 8GB+ VRAM (e.g., RTX 3060, A4000)</li>
+                <li>• 10x faster AI processing</li>
+                <li>• Recommended for production</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div className="p-5 bg-yellow-50 rounded-lg border-l-4 border-yellow-500">
+          <h3 className="text-lg font-bold mb-2 text-gray-800">Minimum Hardware Requirements</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+            <div>
+              <h4 className="font-semibold text-gray-700 mb-2">Starter Tier</h4>
+              <ul className="text-gray-600 space-y-1">
+                <li>• 4 CPU cores</li>
+                <li>• 16GB RAM</li>
+                <li>• 500GB SSD</li>
+                <li>• 1Gbps network</li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold text-gray-700 mb-2">Professional Tier</h4>
+              <ul className="text-gray-600 space-y-1">
+                <li>• 8 CPU cores</li>
+                <li>• 32GB RAM</li>
+                <li>• 1TB SSD</li>
+                <li>• 10Gbps network</li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold text-gray-700 mb-2">Enterprise Tier</h4>
+              <ul className="text-gray-600 space-y-1">
+                <li>• 16+ CPU cores</li>
+                <li>• 64GB+ RAM</li>
+                <li>• 2TB+ NVMe SSD</li>
+                <li>• 10Gbps+ network</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Docker Setup - Hidden for production guide */}
+      <div className="card-glass mb-8" style={{ display: 'none' }}>
         <h2 className="text-2xl font-bold mb-6 text-gray-800">Docker Deployment</h2>
         <div className="mb-6">
           <h3 className="text-lg font-semibold mb-3 text-gray-700">Dockerfile</h3>
@@ -238,8 +349,8 @@ docker-compose down -v`}
         </div>
       </div>
 
-      {/* Kubernetes Deployment */}
-      <div className="card-glass mb-8">
+      {/* Kubernetes Deployment - Hidden for production guide */}
+      <div className="card-glass mb-8" style={{ display: 'none' }}>
         <h2 className="text-2xl font-bold mb-6 text-gray-800">Kubernetes Deployment</h2>
         <div className="mb-6">
           <h3 className="text-lg font-semibold mb-3 text-gray-700">deployment.yaml</h3>
@@ -384,9 +495,11 @@ kubectl rollout undo deployment/rpa-platform -n rpa-platform`}
         </div>
       </div>
 
-      {/* Environment Variables */}
-      <div className="card-glass mb-8">
-        <h2 className="text-2xl font-bold mb-6 text-gray-800">Environment Configuration</h2>
+      {/* Environment Configuration */}
+      <EnvironmentConfig />
+
+      <div style={{ display: 'none' }}>{/* Old Environment section hidden */}
+        <h2 className="text-2xl font-bold mb-6 text-gray-800">Environment Configuration OLD</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
             <h3 className="text-lg font-semibold mb-3 text-gray-700">Production .env</h3>
@@ -494,8 +607,10 @@ SMTP_PASSWORD=SG.xxx`}
       </div>
 
       {/* CI/CD Pipeline */}
-      <div className="card-glass mb-8">
-        <h2 className="text-2xl font-bold mb-6 text-gray-800">CI/CD Pipeline</h2>
+      <CICDPipeline />
+
+      <div style={{ display: 'none' }}>{/* Old CI/CD section hidden */}
+        <h2 className="text-2xl font-bold mb-6 text-gray-800">CI/CD Pipeline OLD</h2>
         <div className="mb-6">
           <h3 className="text-lg font-semibold mb-3 text-gray-700">GitHub Actions Workflow</h3>
           <div className="code-block">

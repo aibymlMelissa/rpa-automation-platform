@@ -117,7 +117,7 @@ const engine = new RPAEngine();
 
 // Schedule a new job
 await engine.scheduleJob({
-  name: 'Daily ACH Extract',
+  name: 'Daily Payment Extract',
   schedule: '0 0 * * *',
   dataSource: { /* config */ }
 });
@@ -178,7 +178,7 @@ const pipeline = new ETLPipeline();
 
 // Process extracted data
 const result = await pipeline.process({
-  source: 'ACH-NACHA',
+  source: 'Stripe-API',
   data: extractedData,
   schema: transactionSchema
 });
@@ -269,9 +269,9 @@ import { useWebSocket } from '@/hooks/useWebSocket';`}
 
       {/* WebSocket Integration */}
       <div className="card-glass mb-8">
-        <h2 className="text-2xl font-bold mb-6 text-gray-800">WebSocket Real-time Updates</h2>
+        <h2 className="text-2xl font-bold mb-6 text-gray-800">WebSocket Processing Updates</h2>
         <p className="text-gray-600 mb-4">
-          Subscribe to real-time events for job updates and progress tracking.
+          Subscribe to call on or scheduled events for job updates and progress tracking.
         </p>
         <div className="code-block">
           <code className="text-sm">

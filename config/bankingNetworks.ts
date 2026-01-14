@@ -1,6 +1,14 @@
 /**
  * Banking Network Sources Configuration
  * Defines all supported banking network data sources for the RPA platform
+ *
+ * NOTE: The following networks are reserved for future technical development:
+ * - ACH_NACHA (ach-nacha) - Automated Clearing House (NACHA)
+ * - SWIFT (swift) - Society for Worldwide Interbank Financial Telecommunication
+ * - FedWire (fedwire) - Federal Reserve Wire Network
+ * - CHIPS (chips) - Clearing House Interbank Payments System
+ *
+ * These clearinghouse networks will be activated upon completion of technical integration.
  */
 
 export interface BankingNetworkSource {
@@ -100,40 +108,43 @@ export const CLEARING_HOUSES: BankingNetworkSource[] = [
 
 /**
  * Payment Processors - Card networks and payment gateways
+ * NOTE: Visa & Mastercard are hidden (infrastructure layer, not merchant-facing)
+ * INCLUDED: PayPal, Stripe, Square (merchant-facing payment processors)
  */
 export const PAYMENT_PROCESSORS: BankingNetworkSource[] = [
-  {
-    id: 'visa-visanet',
-    name: 'Visa (VisaNet)',
-    type: 'payment-processor',
-    category: 'Card Networks',
-    authMethods: ['api-key', 'oauth'],
-    protocols: ['REST', 'SOAP'],
-    url: 'https://www.visa.com',
-    apiEndpoint: 'https://api.visa.com',
-    documentationUrl: 'https://developer.visa.com',
-    capabilities: {
-      realTime: true,
-      batch: true,
-      webhooks: true,
-    },
-  },
-  {
-    id: 'mastercard-network',
-    name: 'Mastercard Network',
-    type: 'payment-processor',
-    category: 'Card Networks',
-    authMethods: ['api-key', 'oauth'],
-    protocols: ['REST'],
-    url: 'https://www.mastercard.com',
-    apiEndpoint: 'https://api.mastercard.com',
-    documentationUrl: 'https://developer.mastercard.com',
-    capabilities: {
-      realTime: true,
-      batch: true,
-      webhooks: true,
-    },
-  },
+  // HIDDEN: Visa & Mastercard (Global card payment networks) - Not applicable for construction company
+  // {
+  //   id: 'visa-visanet',
+  //   name: 'Visa (VisaNet)',
+  //   type: 'payment-processor',
+  //   category: 'Card Networks',
+  //   authMethods: ['api-key', 'oauth'],
+  //   protocols: ['REST', 'SOAP'],
+  //   url: 'https://www.visa.com',
+  //   apiEndpoint: 'https://api.visa.com',
+  //   documentationUrl: 'https://developer.visa.com',
+  //   capabilities: {
+  //     realTime: true,
+  //     batch: true,
+  //     webhooks: true,
+  //   },
+  // },
+  // {
+  //   id: 'mastercard-network',
+  //   name: 'Mastercard Network',
+  //   type: 'payment-processor',
+  //   category: 'Card Networks',
+  //   authMethods: ['api-key', 'oauth'],
+  //   protocols: ['REST'],
+  //   url: 'https://www.mastercard.com',
+  //   apiEndpoint: 'https://api.mastercard.com',
+  //   documentationUrl: 'https://developer.mastercard.com',
+  //   capabilities: {
+  //     realTime: true,
+  //     batch: true,
+  //     webhooks: true,
+  //   },
+  // },
   {
     id: 'paypal',
     name: 'PayPal',
@@ -256,6 +267,7 @@ export const SHARED_INFRASTRUCTURE: BankingNetworkSource[] = [
 
 /**
  * Direct Bank Websites - Web automation templates for bank portals
+ * Includes email-authenticated file downloads and manual document scanning
  */
 export const DIRECT_BANKS: BankingNetworkSource[] = [
   {
@@ -265,6 +277,35 @@ export const DIRECT_BANKS: BankingNetworkSource[] = [
     category: 'Other',
     authMethods: ['username-password-mfa'],
     protocols: ['web-automation'],
+    capabilities: {
+      realTime: false,
+      batch: true,
+      webhooks: false,
+    },
+  },
+  {
+    id: 'email-authenticated-download',
+    name: 'Email/SMS Authenticated Bank File Platform Download',
+    type: 'direct-bank',
+    category: 'Other',
+    authMethods: ['username-password-mfa'],
+    protocols: ['web-automation'],
+    url: 'https://example-bank.com/file-download',
+    documentationUrl: 'https://example-bank.com/help/email-sms-authentication',
+    capabilities: {
+      realTime: false,
+      batch: true,
+      webhooks: false,
+    },
+  },
+  {
+    id: 'manual-hardcopy-scan',
+    name: 'Manual Scan Bank Hardcopy Statements',
+    type: 'direct-bank',
+    category: 'Other',
+    authMethods: ['username-password-mfa'],
+    protocols: ['web-automation'],
+    documentationUrl: 'https://example-bank.com/help/statement-download',
     capabilities: {
       realTime: false,
       batch: true,
@@ -316,13 +357,20 @@ export const BANKING_NETWORKS = {
 /**
  * Helper Functions
  */
+
+// Networks reserved for future technical development
+const FUTURE_NETWORKS = ['ach-nacha', 'swift', 'fedwire', 'chips'];
+
 export function getAllBankingNetworks(): BankingNetworkSource[] {
-  return [
+  const allNetworks = [
     ...CLEARING_HOUSES,
     ...PAYMENT_PROCESSORS,
     ...SHARED_INFRASTRUCTURE,
     ...DIRECT_BANKS,
   ];
+
+  // Filter out future networks that are not yet technically integrated
+  return allNetworks.filter(network => !FUTURE_NETWORKS.includes(network.id));
 }
 
 export function getBankingNetworkById(id: string): BankingNetworkSource | undefined {

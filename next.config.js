@@ -65,13 +65,21 @@ const nextConfig = {
     }
 
     // Ignore problematic dependencies
-    config.externals = config.externals || [];
-    config.externals.push({
-      '@mapbox/node-pre-gyp': 'commonjs @mapbox/node-pre-gyp',
-      'mock-aws-s3': 'mock-aws-s3',
-      'aws-sdk': 'aws-sdk',
-      'nock': 'nock',
-    });
+    if (isServer) {
+      config.externals = config.externals || [];
+      config.externals.push({
+        '@mapbox/node-pre-gyp': 'commonjs @mapbox/node-pre-gyp',
+        'mock-aws-s3': 'mock-aws-s3',
+        'aws-sdk': 'aws-sdk',
+        'nock': 'nock',
+        'puppeteer': 'commonjs puppeteer',
+        'puppeteer-core': 'commonjs puppeteer-core',
+        '@tensorflow/tfjs-node': 'commonjs @tensorflow/tfjs-node',
+        '@google-cloud/bigquery': 'commonjs @google-cloud/bigquery',
+        'playwright': 'commonjs playwright',
+        'playwright-core': 'commonjs playwright-core',
+      });
+    }
 
     // Handle HTML files in node_modules
     config.module.rules.push({
@@ -93,7 +101,28 @@ const nextConfig = {
     serverActions: {
       bodySizeLimit: '2mb',
     },
+    serverComponentsExternalPackages: [
+      'puppeteer',
+      'puppeteer-core',
+      '@tensorflow/tfjs-node',
+      'bullmq',
+      'ioredis',
+      'bcrypt',
+      '@mapbox/node-pre-gyp',
+      '@google-cloud/bigquery',
+      'playwright',
+      'playwright-core',
+      'chrome-aws-lambda',
+      '@sparticuz/chromium',
+      'axios',
+      'pg',
+      'pg-native',
+      'sqlite3',
+    ],
   },
+
+  // Output configuration for better serverless compatibility
+  output: 'standalone',
 };
 
 module.exports = nextConfig;

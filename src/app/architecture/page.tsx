@@ -5,14 +5,14 @@ export default function ArchitecturePage() {
       <div className="card-glass mb-8">
         <h1 className="text-4xl font-bold mb-4 text-gray-800">System Architecture</h1>
         <p className="text-gray-600 text-lg">
-          Three-tier enterprise architecture designed for scalability, security, and reliability
+          Four-tier AI-enhanced enterprise architecture designed for scalability, security, and intelligent automation
         </p>
       </div>
 
       {/* Architecture Diagram */}
       <div className="card-glass mb-8">
-        <h2 className="text-2xl font-bold mb-6 text-gray-800">Three-Tier Architecture</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <h2 className="text-2xl font-bold mb-6 text-gray-800">Four-Tier AI Architecture (v2.0.0)</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {/* Tier 1: Frontend */}
           <div className="feature-card border-l-4 border-blue-500">
             <div className="text-3xl mb-4">🖥️</div>
@@ -40,8 +40,35 @@ export default function ArchitecturePage() {
             </ul>
           </div>
 
-          {/* Tier 2: Backend Core Services */}
-          <div className="feature-card border-l-4 border-purple-500">
+          {/* Tier 2: AI Services Layer */}
+          <div className="feature-card border-l-4 border-purple-500 bg-purple-50">
+            <div className="text-3xl mb-4">🧠</div>
+            <h3 className="text-xl font-bold mb-3 text-gray-800">AI Services Layer</h3>
+            <p className="text-sm text-gray-600 mb-4">
+              Hybrid AI combining computer vision with generative AI
+            </p>
+            <ul className="text-sm text-gray-600 space-y-2">
+              <li className="flex items-start gap-2">
+                <span className="text-purple-600">•</span>
+                <span>DynamicElementDetector (TensorFlow.js)</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-purple-600">•</span>
+                <span>AdaptiveSelectorAI (LLM)</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-purple-600">•</span>
+                <span>DataNormalizerAI (LLM)</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-purple-600">•</span>
+                <span>GPT-4, Gemini, DeepSeek, Local LLMs</span>
+              </li>
+            </ul>
+          </div>
+
+          {/* Tier 3: Backend Core Services */}
+          <div className="feature-card border-l-4 border-orange-500">
             <div className="text-3xl mb-4">⚙️</div>
             <h3 className="text-xl font-bold mb-3 text-gray-800">Backend Core</h3>
             <p className="text-sm text-gray-600 mb-4">
@@ -49,25 +76,25 @@ export default function ArchitecturePage() {
             </p>
             <ul className="text-sm text-gray-600 space-y-2">
               <li className="flex items-start gap-2">
-                <span className="text-purple-600">•</span>
+                <span className="text-orange-600">•</span>
                 <span>RPAEngine (orchestrator)</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-purple-600">•</span>
+                <span className="text-orange-600">•</span>
                 <span>CredentialVault (AES-256-GCM)</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-purple-600">•</span>
-                <span>ETL Pipeline (validate, transform, load)</span>
+                <span className="text-orange-600">•</span>
+                <span>ETL Pipeline (AI-enhanced)</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-purple-600">•</span>
-                <span>AI-powered extraction</span>
+                <span className="text-orange-600">•</span>
+                <span>WebAutomation (AI-assisted)</span>
               </li>
             </ul>
           </div>
 
-          {/* Tier 3: Worker Processes */}
+          {/* Tier 4: Worker Processes */}
           <div className="feature-card border-l-4 border-green-500">
             <div className="text-3xl mb-4">🔄</div>
             <h3 className="text-xl font-bold mb-3 text-gray-800">Worker Layer</h3>
@@ -146,7 +173,7 @@ export default function ArchitecturePage() {
               <h3 className="text-lg font-bold text-gray-800">Banking Network Sources</h3>
             </div>
             <p className="text-sm text-gray-600 ml-10">
-              Clearinghouses, payment processors, banks → REST, SOAP, FIX, ISO20022, web automation
+              Payment processors (Visa, Mastercard, PayPal, Stripe) • Direct bank access (web automation, email/SMS download, manual OCR) • Shared infrastructure (FIS Global, Fiserv - Professional+ tiers)
             </p>
           </div>
 
@@ -166,7 +193,7 @@ export default function ArchitecturePage() {
               <h3 className="text-lg font-bold text-gray-800">Data Storage</h3>
             </div>
             <p className="text-sm text-gray-600 ml-10">
-              PostgreSQL (transactional) → Data warehouse (analytics) → S3 (archives)
+              PostgreSQL (transactional) → Microsoft Dynamic SL (storage or archives) or Microsoft Dynamics 365 (in future)
             </p>
           </div>
 
@@ -252,78 +279,6 @@ export default function ArchitecturePage() {
                 await automation.fillForm(data);
               </code>
             </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Technology Stack */}
-      <div className="card-glass">
-        <h2 className="text-2xl font-bold mb-6 text-gray-800">Infrastructure & Dependencies</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div>
-            <h3 className="text-lg font-semibold mb-3 text-gray-700">Frontend</h3>
-            <ul className="space-y-2 text-sm text-gray-600">
-              <li className="flex items-center gap-2">
-                <span className="text-blue-600">▸</span>
-                Next.js 14 (App Router)
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="text-blue-600">▸</span>
-                React 18 (Server Components)
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="text-blue-600">▸</span>
-                TailwindCSS
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="text-blue-600">▸</span>
-                TypeScript
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-lg font-semibold mb-3 text-gray-700">Backend</h3>
-            <ul className="space-y-2 text-sm text-gray-600">
-              <li className="flex items-center gap-2">
-                <span className="text-purple-600">▸</span>
-                Node.js 18+
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="text-purple-600">▸</span>
-                BullMQ (queue system)
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="text-purple-600">▸</span>
-                Puppeteer/Playwright
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="text-purple-600">▸</span>
-                TensorFlow.js
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-lg font-semibold mb-3 text-gray-700">Infrastructure</h3>
-            <ul className="space-y-2 text-sm text-gray-600">
-              <li className="flex items-center gap-2">
-                <span className="text-green-600">▸</span>
-                PostgreSQL
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="text-green-600">▸</span>
-                Redis
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="text-green-600">▸</span>
-                Docker/Kubernetes
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="text-green-600">▸</span>
-                Google Cloud Platform
-              </li>
-            </ul>
           </div>
         </div>
       </div>

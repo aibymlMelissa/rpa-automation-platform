@@ -9,74 +9,9 @@ export default function ExamplesPage() {
         </p>
       </div>
 
-      {/* Example 1: Schedule a Job */}
+      {/* Example 1: Web Automation */}
       <div className="card-glass mb-8">
-        <h2 className="text-2xl font-bold mb-4 text-gray-800">Example 1: Schedule Daily ACH Extraction</h2>
-        <p className="text-gray-600 mb-4">
-          Schedule a recurring job to extract ACH transactions every day at midnight.
-        </p>
-        <div className="code-block">
-          <code className="text-sm">
-            {`import { RPAEngine } from '@/core/engine/RPAEngine';
-import type { RPAJob, DataSource } from '@/types/rpa.types';
-
-const engine = new RPAEngine();
-
-// Define data source configuration
-const achDataSource: DataSource = {
-  id: 'ach-nacha-prod',
-  type: 'clearinghouse',
-  name: 'ACH-NACHA Production',
-  protocol: 'REST',
-  baseUrl: 'https://api.ach-nacha.com',
-  authentication: {
-    method: 'oauth2',
-    credentialId: 'ach-oauth-token',
-  },
-  config: {
-    endpoints: {
-      transactions: '/v1/transactions',
-      settlements: '/v1/settlements',
-    },
-    rateLimit: {
-      requestsPerMinute: 100,
-      burstLimit: 150,
-    },
-  },
-};
-
-// Schedule daily extraction job
-const job = await engine.scheduleJob({
-  id: 'ach-daily-extract',
-  name: 'Daily ACH Transaction Extract',
-  description: 'Extract previous day ACH transactions at midnight',
-  schedule: '0 0 * * *', // Every day at 00:00 UTC
-  dataSource: achDataSource,
-  extractionConfig: {
-    dateRange: 'previous-day',
-    includeSettlements: true,
-    batchSize: 1000,
-  },
-  enabled: true,
-  retryPolicy: {
-    maxRetries: 3,
-    backoffMultiplier: 2,
-  },
-  notifications: {
-    onSuccess: ['admin@example.com'],
-    onFailure: ['ops-team@example.com'],
-  },
-});
-
-console.log('Job scheduled:', job.id);
-// Output: Job scheduled: ach-daily-extract`}
-          </code>
-        </div>
-      </div>
-
-      {/* Example 2: Web Automation */}
-      <div className="card-glass mb-8">
-        <h2 className="text-2xl font-bold mb-4 text-gray-800">Example 2: Bank Portal Web Automation</h2>
+        <h2 className="text-2xl font-bold mb-4 text-gray-800">Example 1: Bank Portal Web Automation</h2>
         <p className="text-gray-600 mb-4">
           Automate login to a bank portal and extract transaction history using Puppeteer.
         </p>
@@ -160,9 +95,9 @@ try {
         </div>
       </div>
 
-      {/* Example 3: API Extraction */}
+      {/* Example 2: API Extraction */}
       <div className="card-glass mb-8">
-        <h2 className="text-2xl font-bold mb-4 text-gray-800">Example 3: REST API Data Extraction</h2>
+        <h2 className="text-2xl font-bold mb-4 text-gray-800">Example 2: REST API Data Extraction</h2>
         <p className="text-gray-600 mb-4">
           Extract data from a payment processor's REST API with OAuth 2.0 authentication.
         </p>
@@ -241,9 +176,9 @@ return standardizedTransactions;`}
         </div>
       </div>
 
-      {/* Example 4: ETL Pipeline */}
+      {/* Example 3: ETL Pipeline */}
       <div className="card-glass mb-8">
-        <h2 className="text-2xl font-bold mb-4 text-gray-800">Example 4: Process Data Through ETL Pipeline</h2>
+        <h2 className="text-2xl font-bold mb-4 text-gray-800">Example 3: Process Data Through ETL Pipeline</h2>
         <p className="text-gray-600 mb-4">
           Validate, transform, and load extracted banking transactions.
         </p>
@@ -350,9 +285,9 @@ return result;`}
         </div>
       </div>
 
-      {/* Example 5: Real-time Monitoring */}
+      {/* Example 4: Real-time Monitoring */}
       <div className="card-glass mb-8">
-        <h2 className="text-2xl font-bold mb-4 text-gray-800">Example 5: Real-time Job Monitoring with WebSocket</h2>
+        <h2 className="text-2xl font-bold mb-4 text-gray-800">Example 4: Real-time Job Monitoring with WebSocket</h2>
         <p className="text-gray-600 mb-4">
           Subscribe to WebSocket events to monitor job execution in real-time.
         </p>
@@ -465,9 +400,9 @@ export function JobMonitor({ jobId }: { jobId: string }) {
         </div>
       </div>
 
-      {/* Example 6: Credential Management */}
+      {/* Example 5: Credential Management */}
       <div className="card-glass">
-        <h2 className="text-2xl font-bold mb-4 text-gray-800">Example 6: Secure Credential Management</h2>
+        <h2 className="text-2xl font-bold mb-4 text-gray-800">Example 5: Secure Credential Management</h2>
         <p className="text-gray-600 mb-4">
           Store, retrieve, and rotate credentials securely using CredentialVault.
         </p>
@@ -545,6 +480,127 @@ console.log('Stored credentials:', allCredentials.map(c => ({
 await vault.delete('old-credentials');
 console.log('Credentials securely deleted');`}
           </code>
+        </div>
+      </div>
+
+      {/* Example 6: AI-Powered Adaptive Automation (NEW in v2.0.0) */}
+      <div className="card-glass bg-purple-50 border-2 border-purple-300">
+        <div className="flex items-center gap-3 mb-4">
+          <span className="text-3xl">🧠</span>
+          <h2 className="text-2xl font-bold text-purple-700">Example 6: AI-Powered Adaptive Automation (Professional+ Tiers)</h2>
+        </div>
+        <p className="text-gray-700 mb-4">
+          Use generative AI to automatically recover from banking portal changes and normalize inconsistent data formats.
+        </p>
+        <div className="code-block">
+          <code className="text-sm">
+            {`import { AdaptiveSelectorAI } from '@/services/ai/AdaptiveSelectorAI';
+import { DataNormalizerAI } from '@/services/ai/DataNormalizerAI';
+import { WebAutomation } from '@/core/extraction/WebAutomation';
+
+// 1. Adaptive Selector Recovery
+// When a banking portal changes their UI, AI automatically finds new selectors
+const automation = new WebAutomation();
+
+try {
+  await automation.click('#login-button');
+} catch (error) {
+  // Portal changed! AI to the rescue
+  console.log('Selector failed, using AI to recover...');
+
+  const newSelector = await AdaptiveSelectorAI.recover({
+    pageHTML: await automation.getHTML(),
+    originalSelector: '#login-button',
+    targetDescription: 'blue login button with white text',
+    screenshot: await automation.captureScreenshot(),
+  });
+
+  console.log(\`AI suggested new selector: \${newSelector}\`);
+  await automation.click(newSelector); // ✅ Recovered automatically!
+}
+
+// 2. Smart Data Normalization
+// Banking APIs return dates/currencies in different formats
+const messyTransactions = [
+  { date: 'Jan 15, 2025', amount: '$1,234.56', currency: 'usd' },
+  { date: '2025-01-16', amount: '2345.67 USD', currency: 'USD' },
+  { date: '17/01/25', amount: '€3,456.78', currency: 'EUR' },
+  { date: '1/18/2025', amount: '4567.89', currency: '' }, // Missing currency
+];
+
+// AI normalizes to consistent format
+const normalized = await DataNormalizerAI.normalize(messyTransactions, {
+  schema: {
+    date: 'ISO8601',
+    amount: 'number',
+    currency: 'ISO4217',
+  },
+  provider: 'deepseek', // Cost-effective for data normalization
+});
+
+console.log('Normalized data:', normalized);
+// Result:
+// [
+//   { date: '2025-01-15T00:00:00Z', amount: 1234.56, currency: 'USD' },
+//   { date: '2025-01-16T00:00:00Z', amount: 2345.67, currency: 'USD' },
+//   { date: '2025-01-17T00:00:00Z', amount: 3456.78, currency: 'EUR' },
+//   { date: '2025-01-18T00:00:00Z', amount: 4567.89, currency: 'USD' }, // AI inferred
+// ]
+
+// 3. Natural Language Job Creation (Enterprise Tier)
+import { NaturalLanguageInterface } from '@/services/ai/NaturalLanguageInterface';
+
+// User types plain English
+const command = "Extract all Stripe payments over $10,000 from last month and save to BigQuery";
+
+// AI generates job configuration
+const jobConfig = await NaturalLanguageInterface.parse(command, {
+  model: 'gpt-4', // Best for complex NL understanding
+});
+
+console.log('Generated job config:', jobConfig);
+// Result:
+// {
+//   name: 'Stripe High-Value Payments Extraction',
+//   dataSource: { type: 'stripe-api', ... },
+//   filters: { amount: { $gt: 10000 }, date: { $gte: '2024-12-01', $lte: '2024-12-31' } },
+//   destination: { type: 'bigquery', table: 'high_value_payments' },
+//   schedule: 'once'
+// }
+
+await rpaEngine.scheduleJob(jobConfig); // ✅ Job created from natural language!
+
+// 4. AI Cost Monitoring (Important!)
+import { AIUsageTracker } from '@/services/ai/AIUsageTracker';
+
+const usage = await AIUsageTracker.getMonthlyUsage();
+console.log(\`AI calls this month: \${usage.calls}\`);
+console.log(\`Estimated cost: $\${usage.estimatedCost}\`);
+console.log(\`Remaining quota: \${usage.remainingCalls}\`);
+
+// Set alerts for cost control
+await AIUsageTracker.setAlert({
+  type: 'monthly_cost',
+  threshold: 50, // Alert if > $50/month
+  action: 'email',
+  recipients: ['admin@example.com'],
+});`}
+          </code>
+        </div>
+        <div className="mt-4 bg-yellow-100 p-4 rounded border border-yellow-300">
+          <div className="flex items-start gap-3">
+            <span className="text-2xl">💡</span>
+            <div className="text-sm text-gray-800">
+              <strong>AI Tips:</strong>
+              <ul className="mt-2 space-y-1">
+                <li>• Use DeepSeek for cost-effective data normalization (~$0.14/1M tokens)</li>
+                <li>• Use Gemini for document/PDF extraction (~$0.075/1M tokens)</li>
+                <li>• Use GPT-4 for complex reasoning and NL interface (~$2.50/1M tokens)</li>
+                <li>• Enable <code>AI_DATA_MASKING=true</code> for banking compliance</li>
+                <li>• Monitor costs with <code>AI_MAX_CALLS_PER_DAY</code> rate limiting</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </>

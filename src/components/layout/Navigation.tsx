@@ -8,10 +8,10 @@ const navItems = [
   { name: 'Overview', href: '/' },
   { name: 'Architecture', href: '/architecture' },
   { name: 'Features', href: '/features' },
-  { name: 'Implementation', href: '/implementation' },
   { name: 'Security', href: '/security' },
   { name: 'Pipeline', href: '/pipeline' },
   { name: 'Examples', href: '/examples' },
+  // { name: 'Implementation', href: '/implementation' }, // Hidden - Available via direct URL before Deployment
   { name: 'Deployment', href: '/deployment' },
 ];
 
